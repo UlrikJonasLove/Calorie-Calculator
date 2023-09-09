@@ -1,3 +1,5 @@
+const coeff_per_rep = 1.43;
+
 function saveToLocalStorage() {
     let gender = document.getElementById("gender").value;
     let age = document.getElementById("age").value;
@@ -42,52 +44,24 @@ function calculateCalories() {
     let gender = document.getElementById("gender").value;
     let age = parseFloat(document.getElementById("age").value);
     let height = parseFloat(document.getElementById("height").value);
-    let exercise = document.getElementById("exercise").value;
     let weight = parseFloat(document.getElementById("weight").value);
     let reps = parseInt(document.getElementById("reps").value);
-    let liftedWeight = parseFloat(document.getElementById("liftedWeight").value);
+    let sets = parseInt(document.getElementById("sets").value);
 
     let bmr = calculateBMR(weight, height, age, gender);
 
-    let exerciseCalories;
-    switch (exercise) {
-        case "squat":
-            exerciseCalories = 0.05 * reps * liftedWeight;
-            break;
-        case "deadlift":
-            exerciseCalories = 0.06 * reps * liftedWeight;
-            break;
-        case "benchpress":
-            exerciseCalories = 0.04 * reps * liftedWeight;
-            break;
-        case "militarypress":
-            exerciseCalories = 0.04 * reps * liftedWeight;
-            break;
-        case "backrows":
-            exerciseCalories = 0.05 * reps * liftedWeight;
-            break;
-        case "bicepcurls":
-            exerciseCalories = 0.03 * reps * liftedWeight;
-            break;
-        case "tricepkickback":
-            exerciseCalories = 0.03 * reps * liftedWeight;
-            break;
-        case "overheadtricepsextensions":
-            exerciseCalories = 0.03 * reps * liftedWeight;
-            break;
-        default:
-            exerciseCalories = 0.05 * reps * liftedWeight;
-            break;
-    }
+    // Uppdaterad beräkning baserad på antal reps
+    let exerciseCalories = coeff_per_rep * reps * sets;
 
     // En grov uppskattning av EPOC
-    let epoc = 0.1 * bmr;
+    // let epoc = 0.1 * bmr;
 
-    let totalCaloriesBurned = exerciseCalories + epoc;
+    // let totalCaloriesBurned = exerciseCalories + epoc;
 
-    document.getElementById("result").innerText = totalCaloriesBurned.toFixed(2) + " kalorier";
+    document.getElementById("result").innerText = exerciseCalories.toFixed(2) + " kalorier";
 
     saveToLocalStorage();
 }
+
 
 document.addEventListener("DOMContentLoaded", loadFromLocalStorage);

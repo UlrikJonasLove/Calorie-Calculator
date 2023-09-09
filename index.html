@@ -1,67 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Träning Kaloriräknare</title>
-  </head>
-  <body>
-    <h2>Träning Kaloriräknare</h2>
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
 
-    <label for="gender">Kön:</label>
-    <select id="gender">
-      <option value="male">Man</option>
-      <option value="female">Kvinna</option>
-    </select>
+<body class="bg-light">
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="text-center mb-4">Träning Kaloriräknare</h2>
 
-    <br /><br />
+                        <div class="form-group">
+                            <label for="gender">Kön:</label>
+                            <select id="gender" class="form-control">
+                                <option value="male">Man</option>
+                                <option value="female">Kvinna</option>
+                            </select>
+                        </div>
 
-    <label for="age">Ålder:</label>
-    <input type="number" id="age" placeholder="Din ålder" />
+                        <div class="form-group">
+                            <label for="age">Ålder:</label>
+                            <input type="number" id="age" class="form-control" placeholder="Din ålder">
+                        </div>
 
-    <br /><br />
+                        <div class="form-group">
+                            <label for="height">Längd (cm):</label>
+                            <input type="number" id="height" class="form-control" placeholder="Din längd i cm">
+                        </div>
 
-    <label for="height">Längd (cm):</label>
-    <input type="number" id="height" placeholder="Din längd i cm" />
+                        <div class="form-group">
+                            <label for="exercise">Välj övning:</label>
+                            <select id="exercise" class="form-control">
+                                <option value="squat">Squats</option>
+                                    <option value="deadlift">Deadlifts</option>
+                                    <option value="benchpress">Bench Press</option>
+                                    <option value="militarypress">Military Press</option>
+                                    <option value="backrows">Back Rows</option>
+                                    <option value="bicepcurls">Biceps Curls med hantlar</option>
+                                    <option value="tricepkickback">Triceps Kickback med hantlar</option>
+                                    <option value="overheadtricepsextensions">Overhead Triceps Extensions</option>
+                            </select>
+                        </div>
 
-    <br /><br />
+                        <div class="form-group">
+                            <label for="weight">Din kroppsvikt (kg):</label>
+                            <input type="number" id="weight" class="form-control" placeholder="Din vikt i kg">
+                        </div>
 
-    <label for="exercise">Välj övning:</label>
-    <select id="exercise">
-      <option value="squat">Squats</option>
-      <option value="deadlift">Deadlifts</option>
-      <option value="benchpress">Bench Press</option>
-      <option value="militarypress">Military Press</option>
-      <option value="backrows">Back Rows</option>
-      <option value="bicepcurls">Biceps Curls med hantlar</option>
-      <option value="tricepkickback">Triceps Kickback med hantlar</option>
-      <option value="overheadtricepsextensions">Overhead Triceps Extensions</option>
-    </select>
+                        <div class="form-group">
+                            <label for="reps">Antal repetitioner:</label>
+                            <input type="number" id="reps" class="form-control" placeholder="Antal reps">
+                        </div>
 
-    <br /><br />
+                        <div>
+                            <label for="sets">Antal set:</label>
+                            <input type="number" id="sets" class="form-control" placeholder="Antal set">
+                        </div>
+                        
+                        <!-- <div class="form-group">
+                            <label for="liftedWeight">Vikt du lyfter (kg):</label>
+                            <input type="number" id="liftedWeight" class="form-control" placeholder="Vikt du lyfter i kg">
+                        </div> -->
 
-    <label for="weight">Din kroppsvikt (kg):</label>
-    <input type="number" id="weight" placeholder="Din vikt i kg" />
+                        <button onclick="calculateCalories()" class="btn btn-primary btn-block">Beräkna kalorier</button>
 
-    <br /><br />
+                        <h3 class="text-center mt-4">Uppskattad kaloriförbrukning:</h3>
+                        <p id="result" class="text-center">-</p>
 
-    <label for="reps">Antal repetitioner:</label>
-    <input type="number" id="reps" placeholder="Antal reps" />
-
-    <br /><br />
-
-    <label for="liftedWeight">Vikt du lyfter (kg):</label>
-    <input type="number" id="liftedWeight" placeholder="Vikt du lyfter i kg" />
-
-    <br /><br />
-
-    <button onclick="calculateCalories()">Beräkna kalorier</button>
-
-    <br /><br />
-
-    <h3>Uppskattad kaloriförbrukning:</h3>
-    <p id="result">-</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="javascript.js"></script>
-  </body>
+    <!-- Bootstrap JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
 </html>
