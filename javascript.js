@@ -2,16 +2,19 @@ function saveToLocalStorage() {
     let gender = document.getElementById("gender").value;
     let age = document.getElementById("age").value;
     let height = document.getElementById("height").value;
+    let weight = document.getElementById("weight").value;
 
     localStorage.setItem("gender", gender);
     localStorage.setItem("age", age);
     localStorage.setItem("height", height);
+    localStorage.setItem("weight", weight);
 }
 
 function loadFromLocalStorage() {
     let savedGender = localStorage.getItem("gender");
     let savedAge = localStorage.getItem("age");
     let savedHeight = localStorage.getItem("height");
+    let savedWeight = localStorage.getItem("weight");
 
     if (savedGender) {
         document.getElementById("gender").value = savedGender;
@@ -21,6 +24,9 @@ function loadFromLocalStorage() {
     }
     if (savedHeight) {
         document.getElementById("height").value = savedHeight;
+    }
+    if (savedWeight) {
+        document.getElementById("weight").value = savedWeight;
     }
 }
 
