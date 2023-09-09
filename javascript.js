@@ -54,6 +54,21 @@ function calculateCalories() {
         case "benchpress":
             exerciseCalories = 0.04 * reps * liftedWeight;
             break;
+        case "militarypress":
+            exerciseCalories = 0.04 * reps * liftedWeight;
+            break;
+        case "backrows":
+            exerciseCalories = 0.05 * reps * liftedWeight;
+            break;
+        case "bicepcurls":
+            exerciseCalories = 0.03 * reps * liftedWeight;
+            break;
+        case "tricepkickback":
+            exerciseCalories = 0.03 * reps * liftedWeight;
+            break;
+        case "overheadtricepsextensions":
+            exerciseCalories = 0.03 * reps * liftedWeight;
+            break;
         default:
             exerciseCalories = 0.05 * reps * liftedWeight;
             break;
