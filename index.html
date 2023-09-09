@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Träning Kaloriräknare</title>
+  </head>
+  <body>
+    <h2>Träning Kaloriräknare</h2>
+
+    <label for="gender">Kön:</label>
+    <select id="gender">
+      <option value="male">Man</option>
+      <option value="female">Kvinna</option>
+    </select>
+
+    <br /><br />
+
+    <label for="age">Ålder:</label>
+    <input type="number" id="age" placeholder="Din ålder" />
+
+    <br /><br />
+
+    <label for="height">Längd (cm):</label>
+    <input type="number" id="height" placeholder="Din längd i cm" />
+
+    <br /><br />
+
+    <label for="exercise">Välj övning:</label>
+    <select id="exercise">
+      <option value="squat">Squats</option>
+      <option value="deadlift">Deadlifts</option>
+      <option value="benchpress">Bench Press</option>
+      <!-- Lägg till fler övningar här -->
+    </select>
+
+    <br /><br />
+
+    <label for="weight">Din kroppsvikt (kg):</label>
+    <input type="number" id="weight" placeholder="Din vikt i kg" />
+
+    <br /><br />
+
+    <label for="reps">Antal repetitioner:</label>
+    <input type="number" id="reps" placeholder="Antal reps" />
+
+    <br /><br />
+
+    <label for="liftedWeight">Vikt du lyfter (kg):</label>
+    <input type="number" id="liftedWeight" placeholder="Vikt du lyfter i kg" />
+
+    <br /><br />
+
+    <button onclick="calculateCalories()">Beräkna kalorier</button>
+
+    <br /><br />
+
+    <h3>Uppskattad kaloriförbrukning:</h3>
+    <p id="result">-</p>
+
+    <script src="javascript.js"></script>
+  </body>
+</html>
