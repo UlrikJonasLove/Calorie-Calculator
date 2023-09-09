@@ -1,5 +1,16 @@
 const coeff_per_rep = 1.43;
 
+const exerciseCoefficients = {
+    "squat": 1.8,
+    "deadlift": 1.7,
+    "benchpress": 1.4,
+    "militarypress": 1.3,
+    "backrows": 1.4,
+    "bicepcurls": 1.0,
+    "tricepkickback": 1.0,
+    "overheadtricepsextensions": 1.1
+};
+
 function saveToLocalStorage() {
     let gender = document.getElementById("gender").value;
     let age = document.getElementById("age").value;
@@ -45,13 +56,14 @@ function calculateCalories() {
     let age = parseFloat(document.getElementById("age").value);
     let height = parseFloat(document.getElementById("height").value);
     let weight = parseFloat(document.getElementById("weight").value);
+    let exercise = document.getElementById("exercise").value;
     let reps = parseInt(document.getElementById("reps").value);
     let sets = parseInt(document.getElementById("sets").value);
 
     let bmr = calculateBMR(weight, height, age, gender);
-
+    let adjustmentFactor = 0.001 * bmr;
     // Uppdaterad beräkning baserad på antal reps
-    let exerciseCalories = coeff_per_rep * reps * sets;
+    let exerciseCalories = (exerciseCoefficients[exercise] * reps * sets) + adjustmentFactor;
 
     // En grov uppskattning av EPOC
     // let epoc = 0.1 * bmr;
